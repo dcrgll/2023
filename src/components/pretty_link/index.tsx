@@ -13,15 +13,14 @@ export default function PrettyLink({
 	const url = link.text === 'View Project' ? link.text : link.href
 
 	return (
-		<NextLink href={`/${link.href}`} legacyBehavior prefetch={false}>
-			<a
-				onClick={() => plausible(`Click: ${url}`)}
-				className={`font-bold hover:underline ${link.color}`}
-				rel="noopener noreferrer"
-				target="_blank"
-			>
+		<NextLink
+			href={`/${link.href}`}
+			prefetch={false}
+			onClick={() => plausible(`Click: ${url}`)}
+		>
+			<span className={`font-bold hover:underline ${link.color}`}>
 				{link.text}
-			</a>
+			</span>
 		</NextLink>
 	)
 }

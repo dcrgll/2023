@@ -3,10 +3,6 @@ const { withPlausibleProxy } = require('next-plausible')
 
 const nextConfig = {
 	reactStrictMode: true,
-	swcMinify: true,
-	experimental: {
-		appDir: true
-	},
 	async redirects() {
 		return [
 			{
@@ -87,7 +83,7 @@ const nextConfig = {
 		]
 	},
 	images: {
-		domains: ['images.ctfassets.net']
+		remotePatterns: [{ hostname: 'images.ctfassets.net' }]
 	}
 }
 
